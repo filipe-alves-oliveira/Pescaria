@@ -28,7 +28,7 @@
                 <th colspan="2">Função</th>
             </tr>    
             <?php 
-                foreach ($listaPescador as $pescador){
+                foreach ($listaPescadores as $pescador){
             ?>
                 <tr>
                     <td><?php echo $pescador['id'];?></td>
