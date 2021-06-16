@@ -25,7 +25,6 @@
                 <th>CIDADE</th>
                 <th>ESTADO</th>
                 <th>IDADE</th>
-                <th colspan="2">Função</th>
             </tr>    
             <?php 
                 foreach ($listaPescadores as $pescador){
@@ -37,14 +36,10 @@
                     <td><?php echo $pescador['estado'];?></td>
                     <td><?php echo $pescador['idade'];?></td>
                     <td><?php echo $pescador['somanota'];?></td>
-                    <td> <a class="btn-floating btn-small waves-effect waves-light orange"
-                          onclick="JavaScript:location.href='frmEdtCompetidor.php?id=' +
-                          <?php echo $pescador['id'];?>" >
-                           <i class="material-icons">edit</i>
-                    </td>
-
                 </tr>
             <?php
+                }
+                ?>
         </table>
 
 </body>
