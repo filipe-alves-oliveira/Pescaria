@@ -27,7 +27,7 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo right"><img src="imagens/logo3.png" width="60"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="listarCompetidor.php">Pescaria</a></li>
+        <li><a href="listarPescador.php">Pescaria</a></li>
         <li><a href="frmLancarMontaria.php">Lançar Pescaria</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
