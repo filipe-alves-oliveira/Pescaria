@@ -29,8 +29,22 @@
         <div class="col s12">
         <h3 class="blue lighten-4">Listar Pescador <a class="btn-floating btn-large waves-effect waves-light green"
                onclick="JavaScript:location.href='frmInsPescador.php'"><i class="material-icons">add</i></a>
-        </h3></h3>
-        <div class="blue lighten-5">
+        </h3>
+
+        <div class="row">
+            <div class="input-field">
+                <form action="listarPescador.php" method="GET" id="frmBuscaPescador" class="col s12" >
+                    <div class="input-field col s12">
+                        <label for="lblNome" class="red-text text-dark-4">Informe o nome do Pescador: </label>
+                        <input type="text" placeholder="informe o nome do pescador para ser selicionado"
+                               class="form-control col s8" id="txtBusca" name="busca"> 
+                        <button class="btn waves-effect waves-light col m1" type="submit" name="action">
+                        <i class="material-icons right">search</i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <table class="striped highlight  white lighten-3 responsive-table">
             <tr class="light-blue darken-4">    
                 <th>ID</th>
@@ -61,6 +75,7 @@
                           onclick="JavaScript:location.href='frmrmvPescador.php?id=' +
                           <?php echo $pescador['id'];?>" >
                            <i class="material-icons">delete</i>
+                    </td>
                 </tr>
             <?php
                 }
@@ -72,4 +87,3 @@
     </div>         
 </body>
 </html>
-
