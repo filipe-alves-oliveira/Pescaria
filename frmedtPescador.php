@@ -1,5 +1,4 @@
 <?php //frmedtPescador.php
-    include 'menu.php'; 
     include 'conexao.php'; 
 
     //recuperar o id pelo método GET
@@ -98,3 +97,5 @@
     </div>
 </body>
 </html>
+
+
