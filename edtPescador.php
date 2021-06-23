@@ -1,6 +1,6 @@
 <?php  //edtPescador.php
-   //abrir a conexão 
-   include 'conexao.php';  
+    include 'menu.php';
+    include 'conexao.php';  
 
    // recuperar campos do formulário usando método post
    $id = trim($_POST['id']); 

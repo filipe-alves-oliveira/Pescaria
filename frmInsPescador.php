@@ -1,3 +1,7 @@
+<?php
+    include 'menu.php';
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -54,7 +58,7 @@
                </button>
 
                <button class="btn waves-effect waves-light indigo" type="button" name="btnVoltar"
-                onclick="JavaScript:location.href='listarCompetidor.php'">
+                onclick="JavaScript:location.href='listarPescador.php'">
                <i class="material-icons">arrow_back</i> Voltar
                </button>
 

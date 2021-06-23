@@ -1,4 +1,5 @@
 <?php //listarPescador.php
+    include 'menu.php';
     include 'conexao.php'; 
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,14 +23,6 @@
             
     <title>Listar Pescador</title>
 </head>
-
-<body bgcolor="#696969"> 
-<style>
-  div.a{
-    text-align: center;
-  }
-
-</style>
 
     <div class="container">
     <div class="row">

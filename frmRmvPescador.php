@@ -1,5 +1,6 @@
 <?php 
-    include 'menu.php'; 
+    include 'menu.php';
+    
     $id =trim($_GET['id']);
 
     //recuperar os dados no banco de dados
