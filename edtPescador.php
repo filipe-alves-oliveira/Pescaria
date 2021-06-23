@@ -1,4 +1,4 @@
-<?php  //edtCompetidor.php
+<?php  //edtPescador.php
    //abrir a conexão 
    include 'conexao.php';  
 
@@ -12,11 +12,11 @@
    if (!empty($nome)){
        $pdo = Conexao::conectar(); 
        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-       $sql = "UPDATE competidor SET nome=?, cidade=?, estado=?, idade=?, WHERE id=?";
+       $sql = "UPDATE pescador SET nome=?, cidade=?, estado=?, idade=?, WHERE id=?";
        $query = $pdo->prepare($sql);
        $query->execute(array($nome, $cidade, $estado, $idade, $id));
        Conexao::desconectar(); 
    }
    else echo "campo nome é vazios..."; 
-   header("location: listarPescador.php")
+   header("location: ListarPescador.php")
 ?>
