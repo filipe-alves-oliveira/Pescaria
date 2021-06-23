@@ -18,5 +18,5 @@
        Conexao::desconectar(); 
    }
    else echo "campo nome é vazios..."; 
-   header("location: ListarPescador.php")
+   header("location: listarPescador.php")
 ?>

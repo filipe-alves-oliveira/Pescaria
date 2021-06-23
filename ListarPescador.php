@@ -22,9 +22,8 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
             
-    <title>Listar Pescador</title>
+    <title>Lista Pescador</title>
 </head>
-
     <div class="container">
     <div class="row">
         <div class="col s12">
@@ -66,7 +65,7 @@
                 }
                 ?>
             </table>
-        </div>
+
       </div>
     </div>
     </div>         
