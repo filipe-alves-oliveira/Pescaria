@@ -37,7 +37,7 @@
         <div class="brown lighten-4 col s12">
             <h3>Remover Pescador</h3>
         </div>
-    <form action="remPescador.php" method="POST" id='frmRmvPescador' class="col s12">    
+    <form action="rmvPescador.php" method="POST" id='frmRmvPescador' class="col s12">    
         <div class="row">
              <div class="col s10">
                  <label for ="lblId"><h4><blockquote>ID:  <?php echo $id?></blockquote></h4></label>

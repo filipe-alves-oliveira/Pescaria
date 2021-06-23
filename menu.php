@@ -46,7 +46,7 @@
       <a href="#name"><span class="yellow-text name">filipe Alves</span></a>
       <a href="#email"><span class="yellow-text email">Filipe_alvesoliveira@hotmail.com</span></a>
     </div></li>
-    <li><a href="listarCompetidor.php"><i class="material-icons">person</i>pescador</a></li>
+    <li><a href="listarCompetidor.php"><i class="material-icons">person</i>Pescadores</a></li>
     <li><a href="#!">Second Link</a></li>
     <li><div class="divider"></div></li>
     <li><a class="subheader">Subheader</a></li>

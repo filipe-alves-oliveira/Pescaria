@@ -12,6 +12,5 @@
        Conexao::desconectar(); 
    }
    else echo "campo id vazio..."; 
-   header("location: ListarPescador.php")
+   header("location: listarPescador.php")
 ?>
-

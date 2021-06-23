@@ -1,9 +1,7 @@
 <?php //listarPescador.php
-
-    include 'conexao.php';
+    include 'conexao.php'; 
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
      $sql = "Select * from pescador"; 
      $listaPescador = $pdo->query($sql); 
 ?> 
@@ -22,8 +20,17 @@
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
             
-    <title>Lista Pescador</title>
+    <title>Listar Pescador</title>
 </head>
+
+<body bgcolor="#696969"> 
+<style>
+  div.a{
+    text-align: center;
+  }
+
+</style>
+
     <div class="container">
     <div class="row">
         <div class="col s12">
@@ -50,13 +57,15 @@
                     <td><?php echo $pescador['cidade'];?></td>
                     <td><?php echo $pescador['estado'];?></td>
                     <td><?php echo $pescador['idade'];?></td>
+
                     <td><a class="btn-floating btn-small waves-effect waves-light orange"
                           onclick="JavaScript:location.href='frmedtPescador.php?id=' +
                           <?php echo $pescador['id'];?>">
                            <i class="material-icons">edit</i>
                     </td>
+
                     <td><a class="btn-floating btn-small waves-effect waves-light red"
-                          onclick="JavaScript:location.href='frmRmvPescador.php?id=' +
+                          onclick="JavaScript:location.href='frmrmvPescador.php?id=' +
                           <?php echo $pescador['id'];?>" >
                            <i class="material-icons">delete</i>
                     </td>
@@ -65,10 +74,17 @@
                 }
                 ?>
             </table>
-
+        </div>
       </div>
     </div>
     </div>         
 </body>
 </html>
+
+
+
+
+
+
+   
 
