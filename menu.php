@@ -32,7 +32,7 @@
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarPescador.php">Pescador</a></li>
         <li><a href="listarPeixe.php">Peixe</a></li>
-        <li><a href="listar.php">Premiação</a></li>
+        <li><a href="listarPremiacao.php">Premiação</a></li>
         <li><a href="listarTipo.php">Tipo de Peixe</a></li>
         <li><a href="logout.php">SAIR</a></li>
       </ul>
