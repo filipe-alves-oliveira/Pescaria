@@ -16,8 +16,8 @@
 
      //atribui dados em variáveis
      $nome = $dados['nome'];
-     $cidade = $dados['isca'];
-     $estado = $dados['peso'];
+     $isca = $dados['isca'];
+     $peso = $dados['peso'];
     Conexao::desconectar(); 
 ?>
 
@@ -55,7 +55,6 @@
             </div>
            
             <br>
-
             <div class="input-field col s8">
                 <label for="lblNome">Informe o Nome do Peixe</label>
                 <input type="text" class="form-control" id="txtNome" name="txtNome"
@@ -63,15 +62,15 @@
             </div>
 
             <div class="input-field col s5">
-                <label for="lblCidade">Informe a Isca: </label>
-                <input type="text" class="form-control" id="txtCidade" name="txtCidade"
-                value="<?php echo $cidade?>">
+                <label for="lblIsca">Informe a Isca: </label>
+                <input type="text" class="form-control" id="txtIsca" name="txtIsca"
+                value="<?php echo $isca?>">
             </div>
 
             <div class="input-field col s5">
-                <label for="lblEstado">Informe o Peso (kg): </label>
-                <input type="text" class="form-control" id="txtEstado" name="txtEstado"
-                value="<?php echo $estado?>">
+                <label for="lblPeso">Informe o Peso (kg): </label>
+                <input type="number" class="form-control" id="txtPeso" name="txtPeso"
+                value="<?php echo $peso?>">
             </div>      
 
             <br>

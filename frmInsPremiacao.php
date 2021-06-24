@@ -28,18 +28,18 @@
           <div class="row">
           <form action="insPremiacao.php" method="POST" id="frmInsPremiacao" class="col s12">
            <div class="input-field col s8">
-                <label for="lblNome">Informe a colocação: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome">
+                <label for="lblColocacao">Informe a colocação: </label>
+                <input type="number" class="form-control" id="txtColocacao" name="txtColocacao">
             </div>
 
             <div class="input-field col s5">
-                <label for="lblCidade">Informe o Pescador: </label>
-                <input type="text" class="form-control" id="txtEstado" name="txtCidade">
+                <label for="lblPescador">Informe o Pescador: </label>
+                <input type="text" class="form-control" id="txtPescador" name="txtPescador">
             </div>      
 
             <div class="input-field col s5">
-                <label for="lblEstado">Informe o Prêmio: </label>
-                <input type="text"  class="form-control" id="txtIdade" name="txtEstado">
+                <label for="lblPremio">Informe o Prêmio: </label>
+                <input type="text"  class="form-control" id="txtPremio" name="txtPremio">
             </div>
 
             <br>

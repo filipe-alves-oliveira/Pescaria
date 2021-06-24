@@ -33,13 +33,13 @@
             </div>
 
             <div class="input-field col s5">
-                <label for="lblCidade">Informe a Isca: </label>
-                <input type="text" class="form-control" id="txtEstado" name="txtCidade">
+                <label for="lblIsca">Informe a Isca: </label>
+                <input type="text" class="form-control" id="txtIsca" name="txtIsca">
             </div>      
 
             <div class="input-field col s5">
-                <label for="lblEstado">Informe o Peso: </label>
-                <input type="text"  class="form-control" id="txtIdade" name="txtEstado">
+                <label for="lblPeso">Informe o Peso (kg): </label>
+                <input type="number"  class="form-control" id="txtPeso" name="txtPeso">
             </div>
 
             <br>

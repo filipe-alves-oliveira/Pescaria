@@ -34,12 +34,12 @@
 
             <div class="input-field col s5">
                 <label for="lblCidade">Informe a Cidade: </label>
-                <input type="text" class="form-control" id="txtEstado" name="txtCidade">
+                <input type="text" class="form-control" id="txtCidade" name="txtCidade">
             </div>      
 
             <div class="input-field col s5">
                 <label for="lblEstado">Informe o Estado: </label>
-                <input type="text"  class="form-control" id="txtIdade" name="txtEstado">
+                <input type="text"  class="form-control" id="txtEstado" name="txtEstado">
             </div>
 
             <div class="input-field col s5">

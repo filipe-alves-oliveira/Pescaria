@@ -1,4 +1,4 @@
-<?php //frmedtPescador.php
+<?php //frmedtPremiacao.php
     include 'menu.php';
     include 'conexao.php'; 
 
@@ -8,17 +8,16 @@
     //recuperar os dados no banco de dados
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "SELECT * FROM pescador WHERE id=?;"; 
+     $sql = "SELECT * FROM premiacao WHERE id=?;"; 
      $query = $pdo->prepare($sql);
      $query->execute(array($id));
 
      $dados = $query->fetch(PDO::FETCH_ASSOC);
 
      //atribui dados em variáveis
-     $nome = $dados['nome'];
-     $cidade = $dados['cidade'];
-     $estado = $dados['estado'];
-     $idade = $dados['idade'];
+     $colocacao = $colocacao['colocacao'];
+     $pescador = $pescador['pescador'];
+     $premio = $premio['premio'];
     Conexao::desconectar(); 
 ?>
 
@@ -37,15 +36,15 @@
    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Editar Pescador</title>
+    <title>Editar Premiacao</title>
 </head>
 <body>
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-4 col s12">
-            <h3>Alterar Dados de Pescador</h3>
+            <h3>Alterar Dados da Premiacao</h3>
         </div>
      <div class="row">
-        <form action="edtPescador.php" method="POST" id="frmedtPescador" class="col s12">
+        <form action="edtPremiacao.php" method="POST" id="frmedtPremiacao" class="col s12">
                        
         <div class="input-field col s8">
               <h6>
@@ -58,28 +57,22 @@
             <br>
 
             <div class="input-field col s8">
-                <label for="lblNome">Informe o Nome do Pescador: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome"
-                value="<?php echo $nome?>">
+                <label for="lblNome">Informe a colocação Premiacao</label>
+                <input type="number" class="form-control" id="txtPremiacao" name="txtPremiacao"
+                value="<?php echo $premiacao?>">
             </div>
 
             <div class="input-field col s5">
-                <label for="lblCidade">Informe a Cidade: </label>
-                <input type="text" class="form-control" id="txtCidade" name="txtCidade"
-                value="<?php echo $cidade?>">
+                <label for="lblPescador">Informe o Nome do Pescador: </label>
+                <input type="text" class="form-control" id="txtPescador" name="txtPescador"
+                value="<?php echo $pescador?>">
             </div>
 
             <div class="input-field col s5">
-                <label for="lblEstado">Informe a Estado: </label>
-                <input type="text" class="form-control" id="txtEstado" name="txtEstado"
-                value="<?php echo $estado?>">
+                <label for="lblPrêmio">Informe o Prêmio: </label>
+                <input type="text" class="form-control" id="txtpremio" name="txtpremio"
+                value="<?php echo $premio?>">
             </div>      
-
-            <div class="input-field col s5">
-                <label for="lblIdade">Informe a Idade: </label>
-                <input type="number"  class="form-control" id="txtIdade" name="txtIdade"
-                value="<?php echo $idade?>">
-            </div>
 
             <br>
             <div class="input-field col s8">
