@@ -36,7 +36,7 @@
                 <th>ID</th>
                 <th>NOME</th>
                 <th>ISCA</th>
-                <th>PESO</th>
+                <th>PESO (KG)</th>
                 <th colspan="2">EDITAR / REMOVER</th>
             </tr>
             </tr>    

@@ -28,7 +28,7 @@
           <div class="row">
           <form action="insPescador.php" method="POST" id="frmInsPescador" class="col s12">
            <div class="input-field col s8">
-                <label for="lblNome">Informe o Nome do Pescador</label>
+                <label for="lblNome">Informe o Nome do Pescador: </label>
                 <input type="text" class="form-control" id="txtNome" name="txtNome">
             </div>
 
