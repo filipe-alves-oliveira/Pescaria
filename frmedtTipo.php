@@ -1,4 +1,4 @@
-<?php //frmedtPremiacao.php
+<?php //frmedtTipo.php
     include 'menu.php';
     include 'conexao.php'; 
 
@@ -8,16 +8,14 @@
     //recuperar os dados no banco de dados
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "SELECT * FROM premiacao WHERE id=?;"; 
+     $sql = "SELECT * FROM Tipo WHERE id=?;"; 
      $query = $pdo->prepare($sql);
      $query->execute(array($id));
 
      $dados = $query->fetch(PDO::FETCH_ASSOC);
 
      //atribui dados em variáveis
-     $colocacao = $dados['colocacao'];
-     $pescador = $dados['pescador'];
-     $premio = $dados['premio'];
+     $nome = $dados['tipo'];
     Conexao::desconectar(); 
 ?>
 
@@ -36,15 +34,15 @@
    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Editar Premiacao</title>
+    <title>Editar Tipo</title>
 </head>
 <body>
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-4 col s12">
-            <h3>Alterar Dados da Premiacao</h3>
+            <h3>Alterar Dados do Tipo</h3>
         </div>
      <div class="row">
-        <form action="edtPremiacao.php" method="POST" id="frmedtPremiacao" class="col s12">
+        <form action="edtTipo.php" method="POST" id="frmedtTipo" class="col s12">
                        
         <div class="input-field col s8">
               <h6>
@@ -57,22 +55,11 @@
             <br>
 
             <div class="input-field col s8">
-                <label for="lblNome">Informe a colocação Premiacao</label>
-                <input type="number" class="form-control" id="txtPremiacao" name="txtPremiacao"
-                value="<?php echo $premiacao?>">
+                <label for="lblNome">Informe o Tipo: </label>
+                <input type="text" class="form-control" id="txtNome" name="txtNome"
+                value="<?php echo $nome?>">
             </div>
 
-            <div class="input-field col s5">
-                <label for="lblPescador">Informe o Nome do Pescador: </label>
-                <input type="text" class="form-control" id="txtPescador" name="txtPescador"
-                value="<?php echo $pescador?>">
-            </div>
-
-            <div class="input-field col s5">
-                <label for="lblPrêmio">Informe o Prêmio: </label>
-                <input type="text" class="form-control" id="txtpremio" name="txtpremio"
-                value="<?php echo $premio?>">
-            </div>      
 
             <br>
             <div class="input-field col s8">
@@ -85,7 +72,7 @@
                </button>
 
                <button class="btn waves-effect waves-light indigo" type="button" name="btnVoltar"
-                onclick="JavaScript:location.href='ListarPremiacao.php'">
+                onclick="JavaScript:location.href='ListarTipo.php'">
                Voltar <i class="material-icons">arrow_back</i> 
                </button>
 

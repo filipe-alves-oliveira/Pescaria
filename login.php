@@ -8,6 +8,7 @@
    echo $senha;  */
 
    include 'conexao.php';
+   
    $pdo = Conexao::conectar();
    $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
    $sql = "SELECT * FROM usuarios WHERE usuario LIKE ?;";
@@ -23,5 +24,7 @@
         $_SESSION['nome'] = $user['nome'];
         Header("location:menu.php");
    } 
+
+   else header("location: index.php")
 
 ?>
