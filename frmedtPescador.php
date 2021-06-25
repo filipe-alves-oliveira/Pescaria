@@ -1,5 +1,4 @@
 <?php //frmedtPescador.php
-    include 'menu.php';
     include 'conexao.php'; 
 
     //recuperar o id pelo método GET
@@ -40,8 +39,12 @@
     <title>Editar Pescador</title>
 </head>
 <body>
+
+
+<body bgcolor="add8e6"> 
+
     <div class="container grey lighten-4 col s12">
-        <div class="blue lighten-4 col s12">
+        <div class="blue lighten-5 col s12">
             <h3>Alterar Dados de Pescador</h3>
         </div>
      <div class="row">

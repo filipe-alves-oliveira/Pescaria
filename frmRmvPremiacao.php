@@ -1,6 +1,4 @@
 <?php 
-    include 'menu.php';
-    
     $id =trim($_GET['id']);
 
     //recuperar os dados no banco de dados
@@ -34,8 +32,11 @@
     <title>Remoção de Premiação</title>
 </head>
 <body>
+
+<body bgcolor="add8e6"> 
+
     <div class="container grey lighten-4 col s12">
-        <div class="brown lighten-4 col s12">
+        <div class="blue lighten-5 col s12">
             <h3>Remover Premiação</h3>
         </div>
     <form action="rmvPescador.php" method="POST" id='frmRmvPescador' class="col s12">    

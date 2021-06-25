@@ -1,5 +1,4 @@
 <?php 
-    include 'menu.php';
     
     $id =trim($_GET['id']);
 
@@ -34,8 +33,11 @@
     <title>Remoção de Peixe</title>
 </head>
 <body>
+
+<body bgcolor="add8e6"> 
+
     <div class="container grey lighten-4 col s12">
-        <div class="brown lighten-4 col s12">
+        <div class="blue lighten-5 col s12"> 
             <h3>Remover Peixe</h3>
         </div>
     <form action="rmvPeixe.php" method="POST" id='frmRmvPeixe' class="col s12">    

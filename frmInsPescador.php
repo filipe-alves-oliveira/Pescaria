@@ -1,6 +1,4 @@
-<?php
-    include 'menu.php';
-?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -20,8 +18,11 @@
     <title>Inserir Pescador</title>
 </head>
 <body>
+
+<body bgcolor="add8e6"> 
+
     <div class="container white lighten-4 col s12">
-    <div class="blue lighten-4 col s12">
+    <div class="blue lighten-5 col s12">
             <h3>Adicionar Novo Pescador</h3>
           </div>
 

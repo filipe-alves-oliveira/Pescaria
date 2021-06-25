@@ -22,6 +22,9 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+<body bgcolor="add8e6"> 
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +41,7 @@
 </head>
 <body>
     <div class="container grey lighten-4 col s12">
-        <div class="blue lighten-4 col s12">
+        <div class="blue lighten-5 col s12">
             <h3>Alterar Dados do Tipo</h3>
         </div>
      <div class="row">

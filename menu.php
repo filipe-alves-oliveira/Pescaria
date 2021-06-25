@@ -3,6 +3,7 @@ session_start();
 if (!isset($_SESSION['usuario']))
   Header("location:index.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -19,68 +20,70 @@ if (!isset($_SESSION['usuario']))
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
-
   <title>Campeonato de Pescaria 2021</title>
+
+  
 </head>
 
-<body bgcolor="#B0C4DE">
-
+<body bgcolor="add8e6"> 
 <body>
   <!-- menu suspenso -->
-  <nav class="grey darken-2">
+  <nav class="light-blue darken-4">
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo right"><img src="imagens/img9.jpg" width="110" height="63"></a>
+    <a href="#" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
         <li><a href="listarPescador.php">Pescador</a></li>
         <li><a href="listarPeixe.php">Peixe</a></li>
         <li><a href="listarPremiacao.php">Premiação</a></li>
         <li><a href="listarTipo.php">Tipo de Peixe</a></li>
-        <li><a href="logout.php">SAIR</a></li>
+        <li><a href="logout.php"  i class="material-icons">keyboard_tab</i></a></li>
       </ul>
       <h7 right>Usuário: <?php echo $_SESSION['usuario']; ?><h7>
     </div>
   </nav>
-  <!-- menu lateral -->
-  <ul id="slide-out" class="sidenav">
-    <li>
-      <div class="user-view">
-        <div class="background">
-          <img src="imagens/img8.jpg" width="300">
-        </div>
-        <a><img class="circle" src="imagens/img3.jpg"></a>
-        <a><span class="black-text name">Usuário: Filipe</span>
-      </div>
-    </li>
-        <h7>Seja Bem Vindo!</h7>
-      </a></li>
-    <li>
-      <div class="divider"></div>
-    </li>
-    <li><a href="menu.php"><i class="material-icons">person</i>Menu</a></li>
-  </ul>
-  <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
   
 
+  <style>
+  div.b {
+  width: 500px;
 
-</body>
+  position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%)!important;}
+}
+</style>
 
+<div class = "">
+<div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="./Imagens/img12.jpg"> <!-- random image -->
+        <div class="caption center-align">
+        </div>
+      </li>
 
+      <li>
+        <img src="./Imagens/img14.jpg"> <!-- random image -->
+        <div class="caption center-align">
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+  
+ <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.slider');
+    var instances = M.Slider.init(elems);
+  });
+ </script> 
+
+   </body>
 </html>
 
-<script type="text/javascript">
-  document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems, options);
-  });
+</body>
+</html>
 
-  // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-  // var collapsibleElem = document.querySelector('.collapsible');
-  // var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
-
-  // Or with jQuery
-
-  $(document).ready(function() {
-    $('.sidenav').sidenav();
-  });
-</script>

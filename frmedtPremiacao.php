@@ -39,8 +39,11 @@
     <title>Editar Premiacao</title>
 </head>
 <body>
+
+<body bgcolor="add8e6"> 
+
     <div class="container grey lighten-4 col s12">
-        <div class="blue lighten-4 col s12">
+        <div class="blue lighten-5 col s12">
             <h3>Alterar Dados da Premiacao</h3>
         </div>
      <div class="row">
