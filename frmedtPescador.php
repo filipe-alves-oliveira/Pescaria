@@ -43,6 +43,12 @@
 
 <body bgcolor="add8e6"> 
 
+<nav class="light-blue darken-4">
+    <div class="nav-wrapper">
+      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
+       </div>
+  </nav>
+
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-5 col s12">
             <h3>Alterar Dados de Pescador</h3>
@@ -86,8 +92,8 @@
 
             <br>
             <div class="input-field col s8">
-               <button class="btn waves-effect waves-light green" type="submit" name="btnGravar">
-               Salvar <i class="material-icons">send</i> 
+               <button class="btn waves-effect waves-light green" type="submit" name="btnSalvar">
+               Salvar <i class="material-icons">save</i>
                </button>
 
                <button class="btn waves-effect waves-light orange" type="reset" name="btnLimpar">
@@ -95,8 +101,8 @@
                </button>
 
                <button class="btn waves-effect waves-light indigo" type="button" name="btnVoltar"
-                onclick="JavaScript:location.href='ListarPescador.php'">
-               Voltar <i class="material-icons">arrow_back</i> 
+                onclick="JavaScript:location.href='listarPescador.php'">
+               <i class="material-icons">arrow_back</i> Voltar
                </button>
 
             </div>
@@ -105,3 +111,5 @@
     </div>
 </body>
 </html>
+
+

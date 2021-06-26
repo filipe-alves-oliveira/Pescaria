@@ -20,6 +20,12 @@
 
 <body bgcolor="add8e6"> 
 
+<nav class="light-blue darken-4">
+    <div class="nav-wrapper">
+      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
+       </div>
+  </nav>
+
     <div class="container white lighten-4 col s12">
     <div class="blue lighten-5 col s12">
             <h3>Adicionar Nova Premiação</h3>

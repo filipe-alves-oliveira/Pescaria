@@ -1,4 +1,5 @@
 <?php 
+    
     $id =trim($_GET['id']);
 
     //recuperar os dados no banco de dados
@@ -9,7 +10,7 @@
     $query = $pdo->prepare($sql);
     $query->execute(array($id)); // o array($id) é um parâmetro passado para o argumento do SQL. 
 
-    $pescador = $query->fetch(PDO::FETCH_ASSOC);
+    $premiacao = $query->fetch(PDO::FETCH_ASSOC);
     Conexao::desconectar();
 
 ?>
@@ -29,25 +30,31 @@
    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <title>Remoção de Premiação</title>
+    <title>Remover Premiação</title>
 </head>
 <body>
 
 <body bgcolor="add8e6"> 
 
+<nav class="light-blue darken-4">
+    <div class="nav-wrapper">
+      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
+       </div>
+  </nav>
+
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-5 col s12">
             <h3>Remover Premiação</h3>
         </div>
-    <form action="rmvPescador.php" method="POST" id='frmRmvPescador' class="col s12">    
+    <form action="rmvPremiacao.php" method="POST" id='frmRmvPremiacao' class="col s12">    
         <div class="row">
              <div class="col s10">
                  <label for ="lblId"><h4><blockquote>ID:  <?php echo $id?></blockquote></h4></label>
                  <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
 
-                 <label for ="lblColocacao"><H4>COLOCACAO: <?php echo $premiacao['colocacao'];?></H4></label>
+                 <label for ="lblColocacao"><H4>COLOCAÇÃO: <?php echo $premiacao['colocacao'];?></H4></label>
                  <label for ="lblPescador"><H4>PESCADOR: <?php echo $premiacao['pescador'];?></H4></label>
-                 <label for ="lblPremio"><H4>PREMIO: <?php echo $premiacao['premio'];?></H4></label>
+                 <label for ="lblPremio"><H4>PRÊMIO: <?php echo $premiacao['premio'];?></H4></label>
              </div>
         </div>
             <div class="input-field col s8">

@@ -69,7 +69,7 @@
   </ul>
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-    <div class="container">
+
     <div class="row">
         <div class="col s12">
         <h3 class="white lighten-4">Listar Peixe <a class="btn-floating btn-large waves-effect waves-light green"

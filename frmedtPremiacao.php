@@ -1,5 +1,4 @@
 <?php //frmedtPremiacao.php
-    include 'menu.php';
     include 'conexao.php'; 
 
     //recuperar o id pelo método GET
@@ -42,6 +41,12 @@
 
 <body bgcolor="add8e6"> 
 
+<nav class="light-blue darken-4">
+    <div class="nav-wrapper">
+      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
+       </div>
+  </nav>
+
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-5 col s12">
             <h3>Alterar Dados da Premiacao</h3>
@@ -60,9 +65,9 @@
             <br>
 
             <div class="input-field col s8">
-                <label for="lblNome">Informe a colocação Premiacao</label>
+                <label for="lblNome">Informe a colocação </label>
                 <input type="number" class="form-control" id="txtPremiacao" name="txtPremiacao"
-                value="<?php echo $premiacao?>">
+                value="<?php echo $colocacao?>">
             </div>
 
             <div class="input-field col s5">
