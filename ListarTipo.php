@@ -3,7 +3,7 @@ include 'conexao.php';
 $pdo = Conexao::conectar();
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 $sql = "Select * from tipo";
-$listaTipo = $pdo->query($sql);
+$listarTipo = $pdo->query($sql);
 
 session_start();
 if (!isset($_SESSION['usuario']))
@@ -88,7 +88,7 @@ if (!isset($_SESSION['usuario']))
               </tr>
               </tr>
               <?php
-              foreach ($listaTipo as $Tipo) {
+              foreach ($listarTipo as $Tipo) {
               ?>
                 <tr>
                   <td><?php echo $tipo['id']; ?></td>

@@ -1,13 +1,14 @@
-<?php //listarPescador.php
+<?php //listarPremiacao.php
     include 'conexao.php'; 
+
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "Select * from pescador"; 
-     $listaPescador = $pdo->query($sql);
+     $sql = "Select * from tipo"; 
+     $listaPremiacao = $pdo->query($sql); 
 
-  session_start();
-  if (!isset($_SESSION['usuario']))
-      Header("location:index.php"); 
+    session_start();
+    if (!isset($_SESSION['usuario']))
+    Header("location:index.php"); 
 
 ?> 
 
@@ -27,9 +28,7 @@
    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
     
             
-    <title>Listar Pescador</title>
-
-    
+    <title>Listar Tipo</title>
 </head>
 <body>
 
@@ -47,12 +46,13 @@
         <li><a href="listarTipo.php">Tipo de Peixe</a></li>
         <li><a href="logout.php"  i class="material-icons">keyboard_tab</i></a></li>
       </ul>
-      <h7 right>Usuário: <?php echo $_SESSION['usuario']; ?></h7>
+      <h7 right>Usuário: <?php echo $_SESSION['usuario']; ?><h7>
     </div>
   </nav>
 
- <!-- menu lateral -->
- <ul id="slide-out" class="sidenav">
+
+  <!-- menu lateral -->
+  <ul id="slide-out" class="sidenav">
     <li>
       <div class="user-view">
         <div class="background">
@@ -71,42 +71,39 @@
   </ul>
   <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-   
     <div class="row">
         <div class="col s12">
-        <h3 class="white lighten-4">Listar Pescador <a class="btn-floating btn-large waves-effect waves-light green"
-               onclick="JavaScript:location.href='frmInsPescador.php'"><i class="material-icons">add</i></a>
+        <h3 class="white lighten-4">Listar Tipo <a class="btn-floating btn-large waves-effect waves-light green"
+               onclick="JavaScript:location.href='frmInsTipo.php'"><i class="material-icons">add</i></a>
         </h3>
         <div class="blue lighten-5">
         <table class="striped highlight  white lighten-3 responsive-table">
             <tr class="light-blue darken-4">    
                 <th>ID</th>
-                <th>NOME</th>
-                <th>CIDADE</th>
-                <th>ESTADO</th>
-                <th>IDADE</th>
+                <th>DESCRICÃO</th>
+                <th>ESPÉCIE</th>
+                <th>OUTROS</th>
                 <th colspan="2">EDITAR / REMOVER</th>
             </tr>
             </tr>    
             <?php 
-                foreach ($listaPescador as $pescador){
+                foreach ($listaTipo as $tipo){
             ?>
                 <tr>
-                    <td><?php echo $pescador['id'];?></td>
-                    <td><?php echo $pescador['nome'];?></td>
-                    <td><?php echo $pescador['cidade'];?></td>
-                    <td><?php echo $pescador['estado'];?></td>
-                    <td><?php echo $pescador['idade'];?></td>
+                    <td><?php echo $tipo['id'];?></td>
+                    <td><?php echo $tipo['descricao'];?></td>
+                    <td><?php echo $tipo['especie'];?></td>
+                    <td><?php echo $tipo['outros'];?></td>
 
                     <td><a class="btn-floating btn-small waves-effect waves-light orange"
-                          onclick="JavaScript:location.href='frmedtPescador.php?id=' +
-                          <?php echo $pescador['id'];?>">
+                          onclick="JavaScript:location.href='frmedtTipo.php?id=' +
+                          <?php echo $tipo['id'];?>">
                            <i class="material-icons">edit</i>
                     </td>
 
                     <td><a class="btn-floating btn-small waves-effect waves-light red"
-                          onclick="JavaScript:location.href='frmrmvPescador.php?id=' +
-                          <?php echo $pescador['id'];?>" >
+                          onclick="JavaScript:location.href='frmrmvTipo.php?id=' +
+                          <?php echo $tipo['id'];?>" >
                            <i class="material-icons">delete</i>
                     </td>
                 </tr>
@@ -117,15 +114,12 @@
         </div>
       </div>
     </div>
-    </div> 
-            
+        
 </body>
 </html>
 
-
 <script type="text/javascript">
-
-document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.sidenav');
     var instances = M.Sidenav.init(elems, options);
   });
@@ -136,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Or with jQuery
 
-  $(document).ready(function(){
+  $(document).ready(function() {
     $('.sidenav').sidenav();
   });
 </script>

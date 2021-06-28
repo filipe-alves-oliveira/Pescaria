@@ -1,5 +1,4 @@
-<?php //frmedtTipo.php
-    include 'menu.php';
+<?php //frmedtPescador.php
     include 'conexao.php'; 
 
     //recuperar o id pelo método GET
@@ -8,29 +7,22 @@
     //recuperar os dados no banco de dados
      $pdo = Conexao::conectar(); 
      $pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     $sql = "SELECT * FROM Tipo WHERE id=?;"; 
+     $sql = "SELECT * FROM tipo WHERE id=?;"; 
      $query = $pdo->prepare($sql);
      $query->execute(array($id));
 
      $dados = $query->fetch(PDO::FETCH_ASSOC);
 
      //atribui dados em variáveis
-     $nome = $dados['tipo'];
+     $descricao = $dados['descricao'];
+     $especie = $dados['especie'];
+     $outros = $dados['outros'];
     Conexao::desconectar(); 
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-<body bgcolor="add8e6"> 
-
-<nav class="light-blue darken-4">
-    <div class="nav-wrapper">
-      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
-       </div>
-  </nav>
-
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -46,6 +38,16 @@
     <title>Editar Tipo</title>
 </head>
 <body>
+
+
+<body bgcolor="add8e6"> 
+
+<nav class="light-blue darken-4">
+    <div class="nav-wrapper">
+      <a href="menu.php" class="brand-logo right"><img src="imagens/img9.jpg" width="60" class="circle responsive-img"></a>
+       </div>
+  </nav>
+
     <div class="container grey lighten-4 col s12">
         <div class="blue lighten-5 col s12">
             <h3>Alterar Dados do Tipo</h3>
@@ -64,16 +66,27 @@
             <br>
 
             <div class="input-field col s8">
-                <label for="lblNome">Informe o Tipo: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome"
-                value="<?php echo $nome?>">
+                <label for="lblDescricao">Informe a Descrição: </label>
+                <input type="text" class="form-control" id="txtDescricao" name="txtDescricao"
+                value="<?php echo $descricao?>">
             </div>
 
+            <div class="input-field col s5">
+                <label for="lblEspecie">Informe a Especie: </label>
+                <input type="text" class="form-control" id="txtEspecie" name="txtEspecie"
+                value="<?php echo $especie?>">
+            </div>
+
+            <div class="input-field col s5">
+                <label for="lblEstado">Descreva outras infomações: </label>
+                <input type="text" class="form-control" id="txtOutros" name="txtOutros"
+                value="<?php echo $outros?>">
+            </div>      
 
             <br>
             <div class="input-field col s8">
-               <button class="btn waves-effect waves-light green" type="submit" name="btnGravar">
-               Salvar <i class="material-icons">send</i> 
+               <button class="btn waves-effect waves-light green" type="submit" name="btnSalvar">
+               Salvar <i class="material-icons">save</i>
                </button>
 
                <button class="btn waves-effect waves-light orange" type="reset" name="btnLimpar">
@@ -81,8 +94,8 @@
                </button>
 
                <button class="btn waves-effect waves-light indigo" type="button" name="btnVoltar"
-                onclick="JavaScript:location.href='ListarTipo.php'">
-               Voltar <i class="material-icons">arrow_back</i> 
+                onclick="JavaScript:location.href='listarTipo.php'">
+               <i class="material-icons">arrow_back</i> Voltar
                </button>
 
             </div>
@@ -91,3 +104,5 @@
     </div>
 </body>
 </html>
+
+

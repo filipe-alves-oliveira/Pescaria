@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 15-Jun-2021 às 21:08
+-- Tempo de geração: 29-Jun-2021 às 01:46
 -- Versão do servidor: 10.4.18-MariaDB
 -- versão do PHP: 8.0.3
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `pescaria`
 --
-CREATE DATABASE IF NOT EXISTS `pescaria` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `pescaria`;
 
 -- --------------------------------------------------------
 
@@ -29,10 +27,8 @@ USE `pescaria`;
 -- Estrutura da tabela `peixe`
 --
 
-DROP TABLE IF EXISTS `peixe`;
 CREATE TABLE `peixe` (
   `id` int(11) NOT NULL,
-  `tipoPeixe` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
   `isca` varchar(25) NOT NULL,
   `peso` float NOT NULL
@@ -42,9 +38,9 @@ CREATE TABLE `peixe` (
 -- Extraindo dados da tabela `peixe`
 --
 
-INSERT INTO `peixe` (`id`, `tipoPeixe`, `nome`, `isca`, `peso`) VALUES
-(1, 1, 'pacu', 'milho', 3),
-(2, 2, 'pintado', 'minhoca', 8);
+INSERT INTO `peixe` (`id`, `nome`, `isca`, `peso`) VALUES
+(14, 'pacu', 'minhoca', 6),
+(15, 'pacu', 'minhoca', 2);
 
 -- --------------------------------------------------------
 
@@ -52,7 +48,6 @@ INSERT INTO `peixe` (`id`, `tipoPeixe`, `nome`, `isca`, `peso`) VALUES
 -- Estrutura da tabela `pescador`
 --
 
-DROP TABLE IF EXISTS `pescador`;
 CREATE TABLE `pescador` (
   `id` int(11) NOT NULL,
   `nome` varchar(35) NOT NULL,
@@ -66,7 +61,10 @@ CREATE TABLE `pescador` (
 --
 
 INSERT INTO `pescador` (`id`, `nome`, `cidade`, `estado`, `idade`) VALUES
-(2, 'Filipe Alves ', 'Candido Mota', 'SP', 29);
+(31, 'roberto', 'assis', '', 3),
+(33, 'pacu', 'assis', 'sp', 2),
+(34, 'roberto', 'assis', 'sp', 2),
+(35, 'roberto', 'assis', 'sp', 2);
 
 -- --------------------------------------------------------
 
@@ -74,21 +72,19 @@ INSERT INTO `pescador` (`id`, `nome`, `cidade`, `estado`, `idade`) VALUES
 -- Estrutura da tabela `premiacao`
 --
 
-DROP TABLE IF EXISTS `premiacao`;
 CREATE TABLE `premiacao` (
   `id` int(11) NOT NULL,
   `colocacao` int(11) NOT NULL,
-  `premiacao` varchar(35) NOT NULL,
-  `peixe` int(11) NOT NULL,
-  `pescador` int(11) NOT NULL
+  `pescador` varchar(35) NOT NULL,
+  `premio` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `premiacao`
 --
 
-INSERT INTO `premiacao` (`id`, `colocacao`, `premiacao`, `peixe`, `pescador`) VALUES
-(1, 1, 'carro', 2, 2);
+INSERT INTO `premiacao` (`id`, `colocacao`, `pescador`, `premio`) VALUES
+(6, 0, 'alcir', '');
 
 -- --------------------------------------------------------
 
@@ -96,19 +92,53 @@ INSERT INTO `premiacao` (`id`, `colocacao`, `premiacao`, `peixe`, `pescador`) VA
 -- Estrutura da tabela `tipo`
 --
 
-DROP TABLE IF EXISTS `tipo`;
 CREATE TABLE `tipo` (
   `id` int(11) NOT NULL,
-  `descricao` varchar(35) NOT NULL
+  `descricao` varchar(35) NOT NULL,
+  `especie` varchar(35) NOT NULL,
+  `outros` varchar(35) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `tipo`
 --
 
-INSERT INTO `tipo` (`id`, `descricao`) VALUES
-(1, 'escama'),
-(2, 'couro');
+INSERT INTO `tipo` (`id`, `descricao`, `especie`, `outros`) VALUES
+(4, 'escama', 'peixe', 'grande'),
+(5, 'escama', 'peixe', 'grande'),
+(6, 'escama', 'peixe', 'grande'),
+(7, 'escama', 'peixe', 'grande'),
+(8, 'escama', 'peixe', 'grande'),
+(9, 'hj,', 'peixe', 'grande'),
+(10, 'escama', 'peixe', 'grande'),
+(11, 'escama', 'peixe', 'grande'),
+(12, 'escama', 'peixe', 'grande'),
+(13, 'escama', 'peixe', 'grande'),
+(14, 'escama', 'peixe', 'grande'),
+(15, 'escama', 'peixe', 'grande'),
+(16, 'escama', 'peixe', 'grande'),
+(17, 'escama', 'peixe', 'grande'),
+(18, 'escama', 'peixe', 'grande');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL,
+  `nome` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `senha`, `nome`) VALUES
+(1, 'filipe', '202cb962ac59075b964b07152d234b70', 'Filipe Alves ');
 
 --
 -- Índices para tabelas despejadas
@@ -118,8 +148,7 @@ INSERT INTO `tipo` (`id`, `descricao`) VALUES
 -- Índices para tabela `peixe`
 --
 ALTER TABLE `peixe`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `peixe_tipopeixe` (`tipoPeixe`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `pescador`
@@ -131,14 +160,18 @@ ALTER TABLE `pescador`
 -- Índices para tabela `premiacao`
 --
 ALTER TABLE `premiacao`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `pescador_premiacao` (`pescador`),
-  ADD KEY `peixe_premiacao` (`peixe`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `tipo`
 --
 ALTER TABLE `tipo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -149,42 +182,31 @@ ALTER TABLE `tipo`
 -- AUTO_INCREMENT de tabela `peixe`
 --
 ALTER TABLE `peixe`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `pescador`
 --
 ALTER TABLE `pescador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT de tabela `premiacao`
 --
 ALTER TABLE `premiacao`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `tipo`
 --
 ALTER TABLE `tipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- Restrições para despejos de tabelas
+-- AUTO_INCREMENT de tabela `usuarios`
 --
-
---
--- Limitadores para a tabela `peixe`
---
-ALTER TABLE `peixe`
-  ADD CONSTRAINT `peixe_tipopeixe` FOREIGN KEY (`tipoPeixe`) REFERENCES `tipo` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Limitadores para a tabela `premiacao`
---
-ALTER TABLE `premiacao`
-  ADD CONSTRAINT `peixe_premiacao` FOREIGN KEY (`peixe`) REFERENCES `peixe` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `pescador_premiacao` FOREIGN KEY (`pescador`) REFERENCES `pescador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
