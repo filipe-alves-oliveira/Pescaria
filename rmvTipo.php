@@ -1,4 +1,4 @@
-<?php  //rmv Premiacao.php
+<?php  //rmv Tipo.php
    // recuperar campos do formulário usando método post
    $id = trim($_POST['id']); 
 

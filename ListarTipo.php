@@ -30,7 +30,6 @@ if (!isset($_SESSION['usuario']))
 
   <title>Listar Tipo</title>
 
-
 </head>
 
 <body>
@@ -76,7 +75,7 @@ if (!isset($_SESSION['usuario']))
 
       <div class="row">
         <div class="col s12">
-          <h3 class="white lighten-4">Listar Tipo <a class="btn-floating btn-large waves-effect waves-light green" onclick="JavaScript:location.href='frmInsTipo.php'"><i class="material-icons">add</i></a>
+          <h3 class="white lighten-4">Listar Tipo<a class="btn-floating btn-large waves-effect waves-light green" onclick="JavaScript:location.href='frmInsTipo.php'"><i class="material-icons">add</i></a>
           </h3>
           <div class="blue lighten-5">
             <table class="striped highlight  white lighten-3 responsive-table">
@@ -97,12 +96,14 @@ if (!isset($_SESSION['usuario']))
                   <td><?php echo $tipo['especie']; ?></td>
                   <td><?php echo $tipo['outros']; ?></td>
 
-                  <td><a class="btn-floating btn-small waves-effect waves-light orange" onclick="JavaScript:location.href='frmedtPescador.php?id=' +
+                  <td><a class="btn-floating btn-small waves-effect waves-light orange"
+                   onclick="JavaScript:location.href='frmedtTipo.php?id=' +
                           <?php echo $tipo['id']; ?>">
                       <i class="material-icons">edit</i>
                   </td>
 
-                  <td><a class="btn-floating btn-small waves-effect waves-light red" onclick="JavaScript:location.href='frmrmvPescador.php?id=' +
+                  <td><a class="btn-floating btn-small waves-effect waves-light red"
+                   onclick="JavaScript:location.href='frmrmvTipo.php?id=' +
                           <?php echo $tipo['id']; ?>">
                       <i class="material-icons">delete</i>
                   </td>
@@ -114,7 +115,6 @@ if (!isset($_SESSION['usuario']))
           </div>
         </div>
       </div>
-    </div>
 
   </body>
 

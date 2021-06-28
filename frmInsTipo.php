@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             
-    <title>Inserir Tipo</title>
+    <title>Inserir Pescador</title>
 </head>
 <body>
 
@@ -28,14 +27,24 @@
 
     <div class="container white lighten-4 col s12">
     <div class="blue lighten-5 col s12">
-            <h3>Adicionar Novo Tipo</h3>
+            <h3>Adicionar o Tipo de Peixe</h3>
           </div>
 
           <div class="row">
-          <form action="insTipo.php" method="POST" id="frmInsTipo" class="col s12">
+          <form action="insTipo.php" method="POST" id="frmInsDescricao" class="col s12">
            <div class="input-field col s8">
-                <label for="lblNome">Informe a Descrição: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome">
+                <label for="lblDescricao">Informe a descrição: </label>
+                <input type="text" class="form-control" id="txtDescricao" name="txtDescricao">
+            </div>
+
+            <div class="input-field col s5">
+                <label for="lblEspecie">Informe a espécie: </label>
+                <input type="text" class="form-control" id="txtEspecie" name="txtEspecie">
+            </div>      
+
+            <div class="input-field col s5">
+                <label for="lblOutros">Descreva outras informações: </label>
+                <input type="text"  class="form-control" id="txtOutros" name="txtOutros">
             </div>
 
             <br>
