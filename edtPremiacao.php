@@ -13,6 +13,4 @@
         $query->execute(array($colocacao, $pescador, $premio, $id));
         Conexao::desconectar(); 
     
-    header("location:ListarPremiacao.php"); 
-
-?>
+    header("location:ListarPremiacao.php");
