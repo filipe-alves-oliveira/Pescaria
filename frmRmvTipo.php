@@ -9,7 +9,7 @@
     $query = $pdo->prepare($sql);
     $query->execute(array($id)); // o array($id) é um parâmetro passado para o argumento do SQL. 
 
-    $pescador = $query->fetch(PDO::FETCH_ASSOC);
+    $tipo = $query->fetch(PDO::FETCH_ASSOC);
     Conexao::desconectar();
 
 ?>
@@ -51,7 +51,9 @@
                  <label for ="lblId"><h4><blockquote>ID:  <?php echo $id?></blockquote></h4></label>
                  <input type="hidden" id="id" name="id" value="<?php echo $id;?>">
 
-                 <label for ="lblNome"><H4>Descrição: <?php echo $tipo['descricao'];?></H4></label>
+                 <label for ="lblDescricao"><H4>Descrição: <?php echo $tipo['descricao'];?></H4></label>
+                 <label for ="lblEspecie"><H4>Espécie: <?php echo $tipo['especie'];?></H4></label>
+                 <label for ="lblOutros"><H4>Outros: <?php echo $tipo['outros'];?></H4></label>
              </div>
         </div>
             <div class="input-field col s8">

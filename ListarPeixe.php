@@ -8,6 +8,18 @@
     session_start();
     if (!isset($_SESSION['usuario']))
     Header("location:index.php"); 
+
+    if (isset($_GET['busca']))
+       $busca = $_GET['busca'];
+       else $busca = ''; 
+
+     
+    
+     if ($busca !='')
+           $sql = "Select * from peixe WHERE nome like '%" . $busca .  "%' order by nome"; 
+       else $sql = "Select * from peixe order by nome"; 
+     $listaPeixe = $pdo->query($sql);
+
 ?> 
 
 <!DOCTYPE html>
@@ -15,15 +27,15 @@
 <head>
 <meta charset="UTF-8">
    
-   <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-   <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   
-    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/style_geral.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
             
     <title>Listar Peixe</title>
@@ -75,7 +87,20 @@
         <h3 class="white lighten-4">Listar Peixe <a class="btn-floating btn-large waves-effect waves-light green"
                onclick="JavaScript:location.href='frmInsPeixe.php'"><i class="material-icons">add</i></a>
         </h3>
-        <div class="white lighten-5">
+
+
+        <div class="row">
+        <div class="input-field">
+            <form action="listarPeixe.php" method="GET" id="formBuscaPeixe" class="col s12">
+                <div class="input-field col s12">
+                    <input type="text" placeholder="  Informe o nome do peixe." class="form-control col s10" id="txtBusca" name="busca">
+                    <button class="btn light-blue darken-4 col s2" type="submit" name="action">Buscar<i class="material-icons right">search</i>
+                </div>
+            </form>
+        </div>
+        
+
+        <div class="blue lighten-5">
         <table class="striped highlight  white lighten-3 responsive-table">
             <tr class="light-blue darken-4">    
                 <th>ID</th>

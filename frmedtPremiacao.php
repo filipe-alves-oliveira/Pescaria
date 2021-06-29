@@ -77,8 +77,8 @@
             </div>
 
             <div class="input-field col s5">
-                <label for="lblPrêmio">Informe o Prêmio: </label>
-                <input type="text" class="form-control" id="txtpremio" name="txtpremio"
+                <label for="lblPremio">Informe o Prêmio: </label>
+                <input type="text" class="form-control" id="txtPremio" name="txtPremio"
                 value="<?php echo $premio?>">
             </div>      
 

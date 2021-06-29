@@ -9,6 +9,17 @@ session_start();
 if (!isset($_SESSION['usuario']))
   Header("location:index.php");
 
+  if (isset($_GET['busca']))
+       $busca = $_GET['busca'];
+       else $busca = ''; 
+
+     
+    
+     if ($busca !='')
+           $sql = "Select * from tipo WHERE descricao like '%" . $busca .  "%' order by descricao"; 
+       else $sql = "Select * from tipo order by descricao"; 
+     $listarTipo = $pdo->query($sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -17,15 +28,15 @@ if (!isset($_SESSION['usuario']))
 <head>
   <meta charset="UTF-8">
 
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/style_geral.css">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
   <title>Listar Tipo</title>
@@ -77,6 +88,17 @@ if (!isset($_SESSION['usuario']))
         <div class="col s12">
           <h3 class="white lighten-4">Listar Tipo<a class="btn-floating btn-large waves-effect waves-light green" onclick="JavaScript:location.href='frmInsTipo.php'"><i class="material-icons">add</i></a>
           </h3>
+
+          <div class="row">
+        <div class="input-field">
+            <form action="listarTipo.php" method="GET" id="formTipo" class="col s12">
+                <div class="input-field col s12">
+                    <input type="text" placeholder="  Informe o tipo do peixe." class="form-control col s10" id="txtBusca" name="busca">
+                    <button class="btn light-blue darken-4 col s2" type="submit" name="action">Buscar<i class="material-icons right">search</i>
+                </div>
+            </form>
+        </div>
+
           <div class="blue lighten-5">
             <table class="striped highlight  white lighten-3 responsive-table">
               <tr class="light-blue darken-4">
@@ -88,7 +110,7 @@ if (!isset($_SESSION['usuario']))
               </tr>
               </tr>
               <?php
-              foreach ($listarTipo as $Tipo) {
+              foreach ($listarTipo as $tipo) {
               ?>
                 <tr>
                   <td><?php echo $tipo['id']; ?></td>

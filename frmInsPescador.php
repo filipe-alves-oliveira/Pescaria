@@ -34,22 +34,22 @@
           <form action="insPescador.php" method="POST" id="frmInsPescador" class="col s12">
            <div class="input-field col s8">
                 <label for="lblNome">Informe o Nome do Pescador: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome">
+                <input type="text" class="form-control" id="txtNome" name="txtNome" required minlength="2">
             </div>
 
             <div class="input-field col s5">
                 <label for="lblCidade">Informe a Cidade: </label>
-                <input type="text" class="form-control" id="txtCidade" name="txtCidade">
+                <input type="text" class="form-control" id="txtCidade" name="txtCidade" required minlength="2">
             </div>      
 
             <div class="input-field col s5">
                 <label for="lblEstado">Informe o Estado: </label>
-                <input type="text"  class="form-control" id="txtEstado" name="txtEstado">
+                <input type="text"  class="form-control" id="txtEstado" name="txtEstado" required minlength="2" required maxlength="2">
             </div>
 
             <div class="input-field col s5">
                 <label for="lblIdade">Informe a Idade: </label>
-                <input type="number" class="form-control" id="txtIdade" name="txtIdade">
+                <input type="number" class="form-control" id="txtIdade" name="txtIdade" required minlength="1" required maxlength="3">
             </div>
 
             <br>

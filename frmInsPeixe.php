@@ -34,7 +34,8 @@
           <form action="insPeixe.php" method="POST" id="frmInsPeixe" class="col s12">
            <div class="input-field col s8">
                 <label for="lblNome">Informe o Nome do Peixe: </label>
-                <input type="text" class="form-control" id="txtNome" name="txtNome">
+                <input type="text" class="form-control" id="txtNome" name="txtNome" required minlength="2">
+                
             </div>
 
             <div class="input-field col s5">

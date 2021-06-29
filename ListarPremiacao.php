@@ -10,6 +10,17 @@
     if (!isset($_SESSION['usuario']))
     Header("location:index.php"); 
 
+    if (isset($_GET['busca']))
+       $busca = $_GET['busca'];
+       else $busca = ''; 
+
+     
+    
+     if ($busca !='')
+           $sql = "Select * from premiacao WHERE pescador like '%" . $busca .  "%' order by pescador"; 
+       else $sql = "Select * from premiacao order by pescador"; 
+     $listaPremiacao = $pdo->query($sql);
+
 ?> 
 
 <!DOCTYPE html>
@@ -17,15 +28,15 @@
 <head>
 <meta charset="UTF-8">
    
-   <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
-   <!-- Compiled and minified JavaScript -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-   
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="css/style_geral.css">
 
-   <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
             
     <title>Listar Premiacão</title>
@@ -76,6 +87,17 @@
         <h3 class="white lighten-4">Listar Premiação <a class="btn-floating btn-large waves-effect waves-light green"
                onclick="JavaScript:location.href='frmInsPremiacao.php'"><i class="material-icons">add</i></a>
         </h3>
+
+        <div class="row">
+        <div class="input-field">
+            <form action="listarPremiacao.php" method="GET" id="formPremiacao" class="col s12">
+                <div class="input-field col s12">
+                    <input type="text" placeholder="  Informe a premiacao." class="form-control col s10" id="txtBusca" name="busca">
+                    <button class="btn light-blue darken-4 col s2" type="submit" name="action">Buscar<i class="material-icons right">search</i>
+                </div>
+            </form>
+        </div>
+
         <div class="blue lighten-5">
         <table class="striped highlight  white lighten-3 responsive-table">
             <tr class="light-blue darken-4">    
