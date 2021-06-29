@@ -15,7 +15,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-	<title>Login - Pescaria 2021</title>
+	<title>Campeonato de Pesca 2021</title>
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -36,6 +36,7 @@
 					<h4 class="truncate bg-card-user">
 						<img src="imagens/img9.jpg" class="circle responsive-img">
 						<div class="row login">
+						<h4><b>CAMPEONATO DE PESCA 2021</b></h4>
 							<form action="login.php" method="POST" class="col s12">
 								<div class="row">
 									<div class="input-field col m12 s12">
