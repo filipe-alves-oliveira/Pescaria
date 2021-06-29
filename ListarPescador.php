@@ -93,7 +93,7 @@ $listaPescador = $pdo->query($sql);
           <div class="input-field">
             <form action="listarPescador.php" method="GET" id="formBuscaPescador" class="col s12">
               <div class="input-field col s12">
-                <input type="text" placeholder="  Informe o nome do pescador:" class="form-control col s10" id="txtBusca" name="busca">
+                <input type="text" placeholder="  Informe o nome do pescador: " class="form-control col s10" id="txtBusca" name="busca">
                 <button class="btn light-blue darken-4 col s2" type="submit" name="action">Buscar<i class="material-icons right">search</i>
               </div>
             </form>
