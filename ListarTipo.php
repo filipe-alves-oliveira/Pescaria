@@ -91,7 +91,7 @@ if (!isset($_SESSION['usuario']))
         <div class="input-field">
             <form action="listarTipo.php" method="GET" id="formTipo" class="col s12">
                 <div class="input-field col s12">
-                    <input type="text" placeholder="  Informe o tipo do peixe." class="form-control col s10" id="txtBusca" name="busca">
+                    <input type="text" placeholder="  Informe o tipo do peixe: " class="form-control col s10" id="txtBusca" name="busca">
                     <button class="btn light-blue darken-4 col s2" type="submit" name="action">Buscar<i class="material-icons right">search</i>
                 </div>
             </form>
