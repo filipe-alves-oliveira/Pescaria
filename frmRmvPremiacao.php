@@ -58,13 +58,13 @@ Conexao::desconectar();
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 
                         <label for="lblColocacao">
-                            <H4>COLOCAÇÃO: <?php echo $premiacao['colocacao']; ?></H4>
+                            <H4>Colocação: <?php echo $premiacao['colocacao']; ?></H4>
                         </label>
                         <label for="lblPescador">
-                            <H4>PESCADOR: <?php echo $premiacao['pescador']; ?></H4>
+                            <H4>Pescador: <?php echo $premiacao['pescador']; ?></H4>
                         </label>
                         <label for="lblPremio">
-                            <H4>PRÊMIO: <?php echo $premiacao['premio']; ?></H4>
+                            <H4>Prêmio: <?php echo $premiacao['premio']; ?></H4>
                         </label>
                     </div>
                 </div>

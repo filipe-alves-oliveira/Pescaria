@@ -60,7 +60,7 @@ if (!isset($_SESSION['usuario']))
 <div class="slider">
     <ul class="slides">
       <li>
-        <img src="./Imagens/img12.jpg"> <!-- random image -->
+        <img src="./Imagens/img5.jpg"> <!-- random image -->
         <div class="caption center-align">
         </div>
       </li>

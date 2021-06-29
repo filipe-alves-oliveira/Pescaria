@@ -30,7 +30,7 @@
 	<div class="had-container">
 
 		<div class="parallax-container logueo">
-			<div class="parallax"><img src="imagens/img5.jpg"></div>
+			<div class="parallax"><img src="imagens/img2.jpg"></div>
 			<div class="row"><br>
 				<div class="col m8 s8 offset-m2 offset-s2 center">
 					<h4 class="truncate bg-card-user">

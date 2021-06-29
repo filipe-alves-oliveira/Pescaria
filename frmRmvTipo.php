@@ -64,7 +64,7 @@ Conexao::desconectar();
                             <H4>Espécie: <?php echo $tipo['especie']; ?></H4>
                         </label>
                         <label for="lblOutros">
-                            <H4>Outros: <?php echo $tipo['outros']; ?></H4>
+                            <H4>Outras Informações: <?php echo $tipo['outros']; ?></H4>
                         </label>
                     </div>
                 </div>

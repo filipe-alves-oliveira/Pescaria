@@ -36,17 +36,17 @@
                 <form action="insPremiacao.php" method="POST" id="frmInsPremiacao" class="col s12">
                     <div class="input-field col s8">
                         <label for="lblColocacao">Informe a colocação: </label>
-                        <input type="number" class="form-control" id="txtColocacao" name="txtColocacao">
+                        <input type="number" class="form-control" id="txtColocacao" name="txtColocacao"required minlength="1" required maxlength="3">
                     </div>
 
                     <div class="input-field col s5">
                         <label for="lblPescador">Informe o Pescador: </label>
-                        <input type="text" class="form-control" id="txtPescador" name="txtPescador">
+                        <input type="text" class="form-control" id="txtPescador" name="txtPescador" required minlength="1">
                     </div>
 
                     <div class="input-field col s5">
                         <label for="lblPremio">Informe o Prêmio: </label>
-                        <input type="text" class="form-control" id="txtPremio" name="txtPremio">
+                        <input type="text" class="form-control" id="txtPremio" name="txtPremio" required minlength="1">
                     </div>
 
                     <br>

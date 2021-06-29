@@ -59,16 +59,16 @@ Conexao::desconectar();
                         <input type="hidden" id="id" name="id" value="<?php echo $id; ?>">
 
                         <label for="lblNome">
-                            <H4>NOME: <?php echo $pescador['nome']; ?></H4>
+                            <H4>Nome: <?php echo $pescador['nome']; ?></H4>
                         </label>
                         <label for="lblCidade">
-                            <H4>CIDADE: <?php echo $pescador['cidade']; ?></H4>
+                            <H4>Cidade: <?php echo $pescador['cidade']; ?></H4>
                         </label>
                         <label for="lblEstado">
-                            <H4>ESTADO: <?php echo $pescador['estado']; ?></H4>
+                            <H4>Estado: <?php echo $pescador['estado']; ?></H4>
                         </label>
                         <label for="lblIdade">
-                            <H4>IDADE: <?php echo $pescador['idade']; ?></H4>
+                            <H4>Idade: <?php echo $pescador['idade']; ?></H4>
                         </label>
                     </div>
                 </div>

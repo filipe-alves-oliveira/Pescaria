@@ -42,12 +42,12 @@
 
                     <div class="input-field col s5">
                         <label for="lblIsca">Informe a Isca: </label>
-                        <input type="text" class="form-control" id="txtIsca" name="txtIsca">
+                        <input type="text" class="form-control" id="txtIsca" name="txtIsca" required minlength="2">
                     </div>
 
                     <div class="input-field col s5">
                         <label for="lblPeso">Informe o Peso (kg): </label>
-                        <input type="number" class="form-control" id="txtPeso" name="txtPeso">
+                        <input type="number" class="form-control" id="txtPeso" name="txtPeso" required minlength="1" required maxlength="3">
                     </div>
 
                     <br>

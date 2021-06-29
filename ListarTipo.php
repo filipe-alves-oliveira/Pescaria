@@ -12,8 +12,6 @@ if (!isset($_SESSION['usuario']))
   if (isset($_GET['busca']))
        $busca = $_GET['busca'];
        else $busca = ''; 
-
-     
     
      if ($busca !='')
            $sql = "Select * from tipo WHERE descricao like '%" . $busca .  "%' order by descricao"; 
@@ -105,7 +103,7 @@ if (!isset($_SESSION['usuario']))
                 <th>ID</th>
                 <th>DESCRIÇÃO</th>
                 <th>ESPÉCIE</th>
-                <th>OUTROS</th>
+                <th>OUTRAS INFORMAÇÕES</th>
                 <th colspan="2">EDITAR / REMOVER</th>
               </tr>
               </tr>
